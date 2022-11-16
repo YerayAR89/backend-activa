@@ -1,4 +1,5 @@
 "use strict";
+<<<<<<< HEAD
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -14,3 +15,9 @@ const db = mysql2_1.default.createConnection({
     database: "bd_activa_app",
 });
 exports.db = db;
+=======
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PORT = void 0;
+const PORT = 3000;
+exports.PORT = PORT;
+>>>>>>> 9666b455645e1444280effc8cf394c1c929a42bc

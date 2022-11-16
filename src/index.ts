@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import express from 'express';
 import {router} from './routes/router.js';
 import path from 'path';
@@ -23,3 +24,13 @@ app.use("/", router);
 app.listen(PORT, ()=>{
     console.log(`Escuchando en el puerto ${PORT}`);
 })
+=======
+import express from "express";
+import { PORT } from "./config";
+
+const app = express();
+
+app.listen(PORT, () => {
+    console.log(`Escuchando en el puerto ${PORT}`);
+});
+>>>>>>> 9666b455645e1444280effc8cf394c1c929a42bc

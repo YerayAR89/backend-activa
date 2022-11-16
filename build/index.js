@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+<<<<<<< HEAD
 const router_js_1 = require("./routes/router.js");
 const path_1 = __importDefault(require("path"));
 const config_js_1 = require("./config.js");
@@ -22,4 +23,10 @@ app.use(methodOverride((req, res) => {
 app.use("/", router_js_1.router);
 app.listen(config_js_1.PORT, () => {
     console.log(`Escuchando en el puerto ${config_js_1.PORT}`);
+=======
+const config_1 = require("./config");
+const app = (0, express_1.default)();
+app.listen(config_1.PORT, () => {
+    console.log(`Escuchando en el puerto ${config_1.PORT}`);
+>>>>>>> 9666b455645e1444280effc8cf394c1c929a42bc
 });
