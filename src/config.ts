@@ -5,7 +5,7 @@ const PORT=3000;
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "Villaplana11",
   database: "bd_activa_app",
 });
 
