@@ -14,7 +14,6 @@ function createStudent(student: Student, callback: Function){
         
         const insertId = (<OkPacket> result).insertId;
         callback(null, insertId);
-        console.log(queryString);
       }
     
     );

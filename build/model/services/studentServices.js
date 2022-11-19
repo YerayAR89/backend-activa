@@ -11,7 +11,6 @@ function createStudent(student, callback) {
         ;
         const insertId = result.insertId;
         callback(null, insertId);
-        console.log(queryString);
     });
 }
 exports.createStudent = createStudent;
