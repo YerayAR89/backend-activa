@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findAllStudents = exports.createStudent = void 0;
+exports.createUser = exports.findAllStudents = exports.createStudent = void 0;
 const config_js_1 = require("../../config.js");
 function createStudent(student, callback) {
     const queryString = "INSERT INTO student (name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -25,3 +25,16 @@ function findAllStudents(callback) {
     });
 }
 exports.findAllStudents = findAllStudents;
+function createUser(user, callback) {
+    const queryString = "INSERT INTO user (email, password, role) VALUES (?, ?, ?)";
+    config_js_1.db.query(queryString, [user.email, user.password, user.role], (err, result) => {
+        if (err) {
+            callback(err, null);
+        }
+        ;
+        const insertId = result.insertId;
+        callback(null, insertId);
+    });
+}
+exports.createUser = createUser;
+;
