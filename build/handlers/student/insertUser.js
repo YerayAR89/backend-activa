@@ -9,16 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getStudents = void 0;
+exports.insertUser = void 0;
 const studentServices_js_1 = require("../../model/services/studentServices.js");
-function getStudents(req, res) {
+function insertUser(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        (0, studentServices_js_1.findAllStudents)((err, students) => {
+        const newUser = req.body;
+        (0, studentServices_js_1.createUser)(newUser, (err, userId) => {
             if (err) {
-                return res.status(404).json({ "message": err.message });
+                return res.status(500).json({ "message": err.message });
             }
-            res.status(200).render("pages/miperfil2", { data: students });
+            res.status(200).json({ "orderId": userId });
         });
     });
 }
-exports.getStudents = getStudents;
+exports.insertUser = insertUser;
+;

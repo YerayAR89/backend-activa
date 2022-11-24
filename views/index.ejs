@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("templates/head", {webTitle: 'Login'}) %>
+    <link rel="stylesheet" href="./style/styleindex.css">
+</head>
+<body>
+    <div class="center">
+        <div id="prueba">
+            <img id="logoXarxatec" src="./media/img/logo-x-activa-movil-w412.png" alt="Titulo">
+            <img id="imagenLogoXarxatec" src="./media/img/login-img.svg" alt="LogoEnMovimiento"></div>
+        <p>En una comunidad Activa
+            aprendemos más</p>
+        <form action="#" method="post">
+            <p><img class="iconLogin" src="./media/img/login-icono-usuario.png" alt="usuario"><input type="text"
+                    placeholder="   Usuario"></p>
+            <p><img class="iconLogin" src="./media/img/login-icono-clave.png" alt="clave"><input type="password"
+                    placeholder="   Clave">
+            </p>
+
+            <button id="enter" type="submit"><a id="buttonEntry" href="puntos">ENTRAR</a>
+            </button>
+            <p>¿No recuerdas la clave? <a href="#">Restablecer aquí</a></p>
+        </form>
+    </div>
+    <%- include("templates/footer") %>

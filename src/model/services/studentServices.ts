@@ -1,4 +1,5 @@
 import {Student} from "../types/student.js";
+import { User } from "../types/users.js";
 import {db} from "../../config.js";
 import {OkPacket, RowDataPacket} from "mysql2";
 
@@ -27,4 +28,19 @@ function createStudent(student: Student, callback: Function){
     } )
   }
 
-  export {createStudent,findAllStudents};
+  function createUser(user: User, callback: Function){
+    const queryString = "INSERT INTO user (email, password, role) VALUES (?, ?, ?)"
+  
+    db.query(
+      queryString,
+      [user.email, user.password, user.role],
+      (err, result) => {
+        if (err) {callback(err, null)};
+        
+        const insertId = (<OkPacket> result).insertId;
+        callback(null, insertId);
+      }
+    );
+  };
+
+  export {createStudent,findAllStudents,createUser};
