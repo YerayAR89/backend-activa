@@ -7,5 +7,5 @@ export interface Student {
     activaEmailAddress: string,
     phoneNumber: string,
     zipCode: string,
-    idUser: number
+    idUser: string
 }

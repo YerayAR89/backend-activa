@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsers = void 0;
-const studentServices_js_1 = require("../../model/services/studentServices.js");
+const userServices_js_1 = require("../../model/services/userServices.js");
 function getUsers(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        (0, studentServices_js_1.findAllUsers)((err, users) => {
+        (0, userServices_js_1.findAllUsers)((err, users) => {
             if (err) {
                 return res.status(404).json({ "message": err.message });
             }

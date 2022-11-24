@@ -1,6 +1,6 @@
 import express from 'express';
 import { User } from '../../model/types/user.js';
-import {findAllUsers} from '../../model/services/studentServices.js';
+import {findAllUsers} from '../../model/services/userServices.js';
 
 async function getUsers(req: express.Request, res: express.Response){
     findAllUsers((err:Error, users:User[])=>{

@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const app = (0, express_1.default)();
 const path_static_files = path_1.default.join(__dirname, "..", "public");
 app.use(express_1.default.static(path_static_files));
-app.use(express_1.default.urlencoded({ extended: true }));
+app.use(express_1.default.urlencoded({ extended: false }));
 app.use(methodOverride((req, res) => {
     if (req.body && typeof req.body === 'object' && "_method" in req.body) {
         const method = req.body._method;

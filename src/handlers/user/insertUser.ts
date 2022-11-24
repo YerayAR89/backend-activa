@@ -1,5 +1,5 @@
 import express from "express";
-import {createUser} from "../../model/services/studentServices.js";
+import {createUser} from "../../model/services/userServices.js";
 import {User} from "../../model/types/user.js";
 
 async function insertUser(req: express.Request, res: express.Response){

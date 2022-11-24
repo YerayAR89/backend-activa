@@ -115,6 +115,7 @@ ALTER TABLE `reward` ADD CONSTRAINT `reward_fk0` FOREIGN KEY (`id_user_sender`) 
 ALTER TABLE `reward` ADD CONSTRAINT `reward_fk1` FOREIGN KEY (`id_user_rewarded`) REFERENCES `user`(`id`);
 
 
+INSERT INTO `user` (`id`,`email`,`password`,`role`) VALUES (1,'oscar.villaplana@xarxatecactiva.com','123456789','estudiante');
 
 
 
