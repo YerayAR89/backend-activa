@@ -1,4 +1,5 @@
 import {Student} from "../types/student.js";
+import { User } from "../types/users.js";
 import {db} from "../../config.js";
 import {OkPacket, RowDataPacket} from "mysql2";
 
