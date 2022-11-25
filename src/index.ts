@@ -1,19 +1,16 @@
 import express from 'express';
 import { router } from './routes/router.js';
 import path from 'path';
-import * as dotenv from 'dotenv'; //importacion del archivo .env
+import * as dotenv from 'dotenv';
 
 const methodOverride = require('method-override');
 
-dotenv.config({ path: path.join(__dirname, "..", ".env") }); //config dotenv
+dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
 const app = express();
 
-//motor de plantillas
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
-//app.use(express.static(__dirname + "/public")); //prueba imagenes
 
 const path_static_files = path.join(__dirname, "..", "public");
 app.use(express.static(path_static_files));
@@ -26,7 +23,6 @@ app.use(methodOverride((req: express.Request, res: express.Response) => {
     }
 }));
 
-//prueba
 app.get('/miperfil', (req, res) => {
     res.render("miperfil")
 })
