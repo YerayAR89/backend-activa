@@ -10,7 +10,7 @@ exports.PORT = PORT;
 const db = mysql2_1.default.createConnection({
     host: "localhost",
     user: "root",
-    password: "Villaplana11",
+    password: "password",
     database: "bd_activa_app",
 });
 exports.db = db;

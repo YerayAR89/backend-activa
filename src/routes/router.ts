@@ -6,7 +6,7 @@ import {getUsers} from "../handlers/user/getUsers.js";
 
 const router = express.Router();
 
-router.post("/students",insertStudent);
+router.post("/students", insertStudent);
 
 router.get("/students", getStudents);
 
@@ -14,6 +14,5 @@ router.post("/users", insertUser);
 
 router.get("/users", getUsers);
 
-route
 
 export {router};

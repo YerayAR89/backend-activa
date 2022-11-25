@@ -9,18 +9,34 @@
 </head>
 <body>
     <h1>Nuevo Usuario</h1>
-    <form action="/users" method="post">
+    <form action="/students" method="post">
         <p>
-            <label for="email_field"></label>
-            <input type="text" id="email_field" name="email" placeholder="Email">
+            <label for="name_field">Nombre: </label>
+            <input type="text" id="name_field" name="name">
         </p>
         <p>
-            <label for="password_field"></label>
-            <input type="text" id="password_field" name="password" placeholder="Password">
+            <label for="first_surname_field">Primer apellido: </label>
+            <input type="text" id="first_surname_field" name="firstSurname">
         </p>
         <p>
-            <label for="role_field"></label>
-            <input type="text" id="role_field" name="role" placeholder="Role">
+            <label for="second_surname_field">Segundo apellido: </label>
+            <input type="text" id="second_surname_field" name="secondSurname">
+        </p>
+        <p>
+            <label for="personal_email_field">Email personal: </label>
+            <input type="email" id="personal_email_field" name="personalEmailAddress">
+        </p>
+        <p>
+            <label for="activa_email_field">Email Xarxatec Activa: </label>
+            <input type="email" id="activa_email_field" name="activaEmailAddress">
+        </p>
+        <p>
+            <label for="phone_field">Teléfono: </label>
+            <input type="tel" id="phone_field" name="phoneNumber">
+        </p>
+        <p>
+            <label for="zip_code_field">Código postal: </label>
+            <input type="text" id="zip_code_field" name="zipCode">
         </p>
         <p>
             <label for="id_user_field">id_user: </label>
@@ -30,6 +46,8 @@
             <input type="submit">
         </p>
     </form>
+
+    
     <form action="/users" method="post">
         <p>
             <label for="email_field">email XarxatecActiva: </label>
