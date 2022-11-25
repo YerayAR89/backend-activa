@@ -206,7 +206,7 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`),
   KEY `student_fk0` (`id_user`),
   CONSTRAINT `student_fk0` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'Oscar','Villaplana','Giménez','oscar.villaplana@hotmail.com','oscar.villaplana@xarxatecactiva.com','654095289',NULL,NULL,NULL,'12100',1,20,30),(2,'Yeray','Añó','Ródenas','yeray.a.r@gmail.com','yeray.anyo@xarxatecactiva.com','652275530',NULL,NULL,NULL,'12540',2,20,30);
+INSERT INTO `student` VALUES (1,'Oscar','Villaplana','Giménez','oscar.villaplana@hotmail.com','oscar.villaplana@xarxatecactiva.com','654095289',NULL,NULL,NULL,'12100',1,20,30),(2,'Yeray','Añó','Ródenas','yeray.a.r@gmail.com','yeray.anyo@xarxatecactiva.com','652275530',NULL,NULL,NULL,'12540',2,20,30),(3,'Albert','Sales','Pasqual','albert.sales@hotmail.com','albert.sales@xarxatecactiva.com','666666666',NULL,NULL,NULL,'12100',3,20,30),(4,'Alba','Rueda',NULL,'albaru@gmail.com','alba.rueda@xarxatecactiva.com','655444333',NULL,NULL,NULL,'12100',4,20,30),(5,'Cristina','Breva',NULL,'crisbrev@gmail.com','cristina.breva@xarxatecactiva.com','655443322',NULL,NULL,NULL,'12100',5,20,30);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -289,7 +289,7 @@ CREATE TABLE `user` (
   `role` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -298,7 +298,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'oscar.villaplana@xarxatecactiva.com','123456789','estudiante'),(2,'yeray.anyo@xarxatecactiva.com','987654321','estudiante');
+INSERT INTO `user` VALUES (1,'oscar.villaplana@xarxatecactiva.com','123456789','estudiante'),(2,'yeray.anyo@xarxatecactiva.com','987654321','estudiante'),(3,'albert.sales@xarxatecactiva.com','9786253412','estudiante'),(4,'alba.rueda@xarxatecactiva.com','9786253412','estudiante'),(5,'cristina.breva@xarxatecactiva.com','9786253412','estudiante'),(6,'junior.depaula@xarxatecactiva.com','9786253412','estudiante'),(7,'anacristina.mota@xarxatecactiva.com','9786253412','estudiante'),(8,'eliannys.cermenyo@xarxatecactiva.com','9786253412','estudiante'),(9,'beatriz.rodriguez@xarxatecactiva.com','9786253412','estudiante'),(10,'juan.esteban@xarxatecactiva.com','9786253412','estudiante'),(11,'antonio.devega@xarxatecactiva.com','9786253412','estudiante'),(12,'enrique.ricardo@xarxatecactiva.com','9786253412','estudiante'),(13,'carla.diaz@xarxatecactiva.com','9786253412','estudiante'),(14,'lydia.blanco@xarxatecactiva.com','9786253412','estudiante'),(15,'gregorio.acedo@xarxatecactiva.com','9786253412','estudiante'),(16,'arantxa.troncho@xarxatecactiva.com','9786253412','estudiante');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -311,4 +311,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22  9:54:20
+-- Dump completed on 2022-11-24 12:51:46
