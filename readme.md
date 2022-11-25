@@ -10,6 +10,7 @@ npm install express
 npm install mysql2
 npm install ejs
 npm install method-override
+npm install dotenv
 ```
 
 ## Autores
