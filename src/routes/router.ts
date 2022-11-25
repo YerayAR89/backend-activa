@@ -12,6 +12,8 @@ router.get("/students", getStudents);
 
 router.post("/users", insertUser);
 
-router.get("/users", getUsers)
+router.get("/users", getUsers);
+
+route
 
 export {router};

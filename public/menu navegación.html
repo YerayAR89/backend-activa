@@ -5,29 +5,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/style/stylePointsWhitSending.css">
+  <link rel="stylesheet" href="/public/style/styling2.css">
   <title>Mis puntos</title>
 </head>
 
 <body>
-  <div id="menu">
-    <div class="menuFoot">
-      <a href="mispuntosEnviados.html"><img src="/public/media/img/iconosMenu/mis-puntos-red.svg" alt="points"></a>
-      <p class="red">Mis puntos</p>
-    </div>
-    <div class="menuFoot">
-      <a href="ranking.html"><img src="/public/media/img/iconosMenu/mis-puntos-gray.svg" alt="ranking"></a>
-      <p>Ranking</p>
-    </div>
-    <div class="menuFoot">
-      <a href="#"><img src="/public/media/img/iconosMenu/mi-perfil-gray.svg" alt="perfil"></a>
-      <a href="/public/miPerfil.html"><p>Mi perfil</p></a>
-    </div>
-    <div class="menuFoot">
-      <a href="login.html"><img src="/public/media/img/iconosMenu/logout-gray.svg" alt="exit"></a>
-      <p>Salir</p>
-    </div>
-  </div>
+  <nav id="menu">
+    <ul>
+        <li> <div class="menuFoot">
+            <a href="mispuntosEnviados.html">
+                <p><img src="/public/media/img/iconosMenu/mis-puntos-red.svg" alt="points"></p>
+                <p>Puntos</p>
+            </a>
+            </div>
+        </li>
+        <li> <div class="menuFoot">
+            <a href="ranking.html">
+                <p><img src="/public/media/img/iconosMenu/mis-puntos-gray.svg" alt="ranking"></p>
+                <p>Ranking</p>
+            </a>
+            </div>
+        </li>
+        <li> <div class="menuFoot">
+            <a href="/public/miPerfil.html">
+                <p><img src="/public/media/img/iconosMenu/mi-perfil-gray.svg" alt="perfil"></p>
+                <p>Mi perfil</p>
+            </a>
+            </div>
+        </li>
+        <li> <div class="menuFoot">
+            <a href="login.html">
+                <p><img src="/public/media/img/iconosMenu/logout-gray.svg" alt="exit"></p>
+                <p>Salir</p>
+            </a>
+            </div>
+        </li>
+    </ul>
+   
+    </nav>
   <div>
     <h1 class="center">MIS PUNTOS</h1>
     <hr />
@@ -50,8 +65,6 @@
   <div id="enviarPuntos">
   <h2 class="center">ENVIAR PUNTOS</h2>
   <hr />
-  
-  
   <div id="fondo">
     <p class="center">Alumnos Xarxatec Activa 2023</p>
     <div class="search"><a href="mispuntosEnviadosConEnvio.html">
@@ -64,17 +77,6 @@
       </select>
     </div>
   </div>
-
-  <p class="center">Alumnos Xarxatec Activa 2023</p>
-  <form action="/students/:id_student" method="get">
-    <p><label for="id_student">Elige el estudiante:</label><select name="student" id="id_student" title="student">
-
-
-    </select></p>
-    <p><input type="submit" value="Confirmar"></p>
-  </form>
-
-
 </div>
   <div id="miHistorial">
     <h2 class="center">MI HISTORIAL</h2>

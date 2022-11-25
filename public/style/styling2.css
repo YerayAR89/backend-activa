@@ -1,0 +1,29 @@
+/*css nuevo*/
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+li a {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  
+  color: red;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgba(174, 0, 255, 0.422);
+}
+
+#menu {
+  background-color: blue;
+}
