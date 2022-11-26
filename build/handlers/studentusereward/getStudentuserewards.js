@@ -9,17 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getStudents = void 0;
-const studentServices_js_1 = require("../../model/services/studentServices.js");
-function getStudents(req, res) {
+exports.getStudentuserewardos = void 0;
+const studentuserewardServices_js_1 = require("../../model/services/studentuserewardServices.js");
+function getStudentuserewardos(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        (0, studentServices_js_1.findAllStudents)((err, students) => {
+        (0, studentuserewardServices_js_1.informAllUsers)((err, studentUseReward) => {
             if (err) {
                 return res.status(404).json({ "message": err.message });
             }
-            console.log(typeof (students[0]));
-            res.status(200).json(students);
+            console.log(typeof (studentUseReward[0]));
+            res.status(200).json(studentUseReward);
         });
     });
 }
-exports.getStudents = getStudents;
+exports.getStudentuserewardos = getStudentuserewardos;

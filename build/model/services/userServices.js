@@ -16,7 +16,7 @@ function createUser(user, callback) {
 exports.createUser = createUser;
 ;
 function findAllUsers(callback) {
-    const queryString = "SELECT * FROM users";
+    const queryString = "SELECT * FROM user";
     config_js_1.db.query(queryString, (err, result) => {
         if (err)
             callback(err, null);

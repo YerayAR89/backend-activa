@@ -7,7 +7,8 @@ async function getStudents(req: express.Request, res: express.Response) {
         if (err) {
             return res.status(404).json({ "message": err.message });
         }
-        res.status(200).render("pages/miperfil2", { data: students });
+        console.log(typeof(students[0]));
+        res.status(200).json(students);
     })
 }
 

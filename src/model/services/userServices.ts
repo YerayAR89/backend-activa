@@ -19,7 +19,7 @@ function createUser(user: User, callback: Function){
   };
 
 function findAllUsers(callback:Function){
-  const queryString = "SELECT * FROM users";
+  const queryString = "SELECT * FROM user";
     db.query(queryString, (err, result)=>{
     if(err) callback(err, null);
 
