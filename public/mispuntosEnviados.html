@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/style/stylePointsWhitSending.css">
-  <script src="./createStudentOptions.js"></script>
+  <link rel="stylesheet" href="/style/stylePointsWhitSending.css">
+  <script src="./scripts/createUserOptions.js" async></script>
   <title>Mis puntos</title>
 </head>
 
@@ -54,6 +54,26 @@
   
   
   <div id="fondo">
+    <p class="center">Alumnos Xarxatec Activa 2021</p>
+  <form action="/studentuserewards/:id_user" method="POST">
+    <p><label for="id_user"><img id="iconActiva" src="/public/media/img/puntos-activa-logo.svg" alt="logoBuscarGente"></label><select name="student" id="id_student" title="student">
+      
+    </select></p>
+
+    <div class="spanCenter">Descripción del envío</div>
+    <form action="#">
+      <div id="textContainerDescription">
+        <input id="sendDescription" type="text"></div>
+      <div class="spanCenter">¿cuánto envías?</div>
+      <div id="numberContainerqty">
+        <input id="pointQty" type="number">
+        <button id="sendPoints">ENVIAR</button></div>
+    </form>
+  </div>
+
+    <p><input type="submit" value="Confirmar"></p>
+  </form>
+
     <p class="center">Alumnos Xarxatec Activa 2023</p>
     <div class="search"><a href="mispuntosEnviadosConEnvio.html">
         <img id="iconActiva" src="/public/media/img/puntos-activa-logo.svg" alt="logoBuscarGente"></a>
@@ -65,15 +85,6 @@
       </select>
     </div>
   </div>
-
-  <p class="center">Alumnos Xarxatec Activa 2023</p>
-  <form action="/students/:id_student" method="get">
-    <p><label for="id_student">Elige el estudiante:</label><select name="student" id="id_student" title="student">
-
-
-    </select></p>
-    <p><input type="submit" value="Confirmar"></p>
-  </form>
 
 
 </div>
