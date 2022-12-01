@@ -23,9 +23,9 @@ app.use(methodOverride((req: express.Request, res: express.Response) => {
     }
 }));
 
-app.get('/miperfil', (req, res) => {
+/*app.get('/miperfil', (req, res) => {
     res.render("miperfil")
-})
+})*/
 
 app.get('/index', (req, res) => {
     res.render("index")

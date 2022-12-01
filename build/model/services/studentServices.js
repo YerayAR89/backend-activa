@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createUser = exports.findAllStudents = exports.createStudent = void 0;
+exports.findOneStudent = exports.createUser = exports.findAllStudents = exports.createStudent = void 0;
 const config_js_1 = require("../../config.js");
 function createStudent(student, callback) {
     const queryString = "INSERT INTO student (name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -37,4 +37,17 @@ function createUser(user, callback) {
     });
 }
 exports.createUser = createUser;
+;
+function findOneStudent(id, callback) {
+    const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student WHERE id = ?";
+    config_js_1.db.query(queryString, [id], (err, result) => {
+        if (err) {
+            callback(err, null);
+        }
+        ;
+        const studentFound = result[0];
+        callback(null, studentFound);
+    });
+}
+exports.findOneStudent = findOneStudent;
 ;

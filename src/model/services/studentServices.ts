@@ -42,5 +42,17 @@ function createStudent(student: Student, callback: Function){
       }
     );
   };
+  function findOneStudent(id: string, callback: Function){
+ 
+    const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student WHERE id = ?";
+    db.query(queryString, [id], (err, result)=>{
+      if(err){ callback(err, null)};
+      
+      const studentFound: Student = (<RowDataPacket>result)[0];
+      callback(null, studentFound);
+    })
+  };
+  
 
-  export {createStudent,findAllStudents,createUser};
+
+  export {createStudent,findAllStudents,createUser, findOneStudent};

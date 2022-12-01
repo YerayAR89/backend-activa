@@ -29,14 +29,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router_js_1 = require("./routes/router.js");
 const path_1 = __importDefault(require("path"));
-const dotenv = __importStar(require("dotenv")); //importacion del archivo .env
+const dotenv = __importStar(require("dotenv"));
 const methodOverride = require('method-override');
-dotenv.config({ path: path_1.default.join(__dirname, "..", ".env") }); //config dotenv
+dotenv.config({ path: path_1.default.join(__dirname, "..", ".env") });
 const app = (0, express_1.default)();
-//motor de plantillas
 app.set('view engine', 'ejs');
 app.set('views', './views');
-//app.use(express.static(__dirname + "/public")); //prueba imagenes
 const path_static_files = path_1.default.join(__dirname, "..", "public");
 app.use(express_1.default.static(path_static_files));
 app.use(express_1.default.urlencoded({ extended: false }));
@@ -47,10 +45,9 @@ app.use(methodOverride((req, res) => {
         return method;
     }
 }));
-//prueba
-app.get('/miperfil', (req, res) => {
-    res.render("miperfil");
-});
+/*app.get('/miperfil', (req, res) => {
+    res.render("miperfil")
+})*/
 app.get('/index', (req, res) => {
     res.render("index");
 });
