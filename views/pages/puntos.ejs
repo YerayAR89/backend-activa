@@ -3,6 +3,7 @@
 <head>
     <%- include("templates/head", {webTitle: 'Puntos'}) %>
     <link rel="stylesheet" href="./style/stylePointsWhitSending.css">
+    <script src="./scripts/createUserOptions.js" async></script>
 </head>
 <%- include("templates/menu") %>
 <body>
@@ -29,18 +30,36 @@
     <h2 class="center">ENVIAR PUNTOS</h2>
     <hr />
     <div id="fondo">
-      <p class="center">Alumnos Xarxatec Activa 2023</p>
-      <div class="search"><a href="mispuntosEnviadosConEnvio.html">
-          <img id="iconActiva" src="./media/img/puntos-activa-logo.svg" alt="logoBuscarGente"></a>
-        <select name="alumnos" id="alumnos" title="alumnos">
-          <option value="r">Enviar puntos a...</option>
-          <option value="r">Antonio</option>
-          <option value="a">Lydia</option>
-          <option value="v">Juan</option>
-        </select>
+      <p class="center">Alumnos Xarxatec Activa 2021</p>
+    <form action="/studentuserewards/:id_user" method="POST">
+      <p><label for="id_user"><img id="iconActiva" src="/media/img/puntos-activa-logo.svg" alt="logoBuscarGente"></label>
+        <select name="student" id="id_student" title="student">
+        
+      </select></p>
+  
+      <p class="spanCenter">
+          <p><label for="first_surname_field">Descripción del envío: </label></p>
+          <input id="sendDescription" id="textContainerDescription" type="text">
+      </p>
+        <div class="spanCenter">¿cuánto envías?</div>
+  
+      <div id="numberContainerqty">
+        <input id="pointQty" type="number">
+        <input type="submit" id="sendPoints" value="ENVIAR">
       </div>
-    </div>
+    </form>
   </div>
+  
+    <!--  <p class="center">Alumnos Xarxatec Activa 2023</p>
+      <div class="search"><a href="mispuntosEnviadosConEnvio.html">
+          <img id="iconActiva" src="/media/img/puntos-activa-logo.svg" alt="logoBuscarGente"></a>
+      </div>-->
+    </div>
+  
+  
+  </div>
+  
+  
     <div id="miHistorial">
       <h2 class="center">MI HISTORIAL</h2>
       <hr />

@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const app = (0, express_1.default)();
 //motor de plantillas
 app.set('view engine', 'ejs');
-app.set('views', './views');
+//app.set('views', './views');
 app.use(express_1.default.static(__dirname + "/public")); //prueba imagenes
 const path_static_files = path_1.default.join(__dirname, "..", "public");
 app.use(express_1.default.static(path_static_files));

@@ -12,4 +12,9 @@ async function createOptionsForSelectUser () {
     document.getElementById("id_student").innerHTML=optionsString;
 }
 
+/*function openFormSendPoints() {
+    const 
+    if 
+}*/
+
 window.addEventListener('load',createOptionsForSelectUser);
