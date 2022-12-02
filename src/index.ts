@@ -2,15 +2,53 @@ import express from 'express';
 import { router } from './routes/router.js';
 import path from 'path';
 import * as dotenv from 'dotenv';
+import MySQLSessionStore from 'express-mysql-session';
+
+const session = require('express-session');
 
 const methodOverride = require('method-override');
 
 dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
+const optionsStore = {
+    connectionLimit: 50,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB_NAME,
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'session_table',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data',
+        }
+    }
+}
+
+const sqlStore = new (MySQLSessionStore as any)(session);
+
+const sessionStore = new sqlStore(optionsStore);
+
+
+
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+app.use(session({
+    name: "probando_sesiones",
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore,
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000,
+        sameSite: true
+    }
+}))
 
 const path_static_files = path.join(__dirname, "..", "public");
 app.use(express.static(path_static_files));
