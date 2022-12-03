@@ -9,9 +9,35 @@ body {
 }
 
 main {
-  margin-top: 10%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 10% 50%;
+}
+
+table {
+  width: 95%;
+  background-color:antiquewhite;
+  border: 2px solid rgb(224,0,77);
+ 
+}
+
+th {
+  text-align: start;
+  height: 40px;
+}
+
+article {
+  background-color: antiquewhite;
+  border: 2px solid rgba(224, 0, 77);
+  border-radius: 50%;
+  width: 25%;
+  align-self: center;
+  margin-bottom: 5%;
+}
+
+#userImg {
+  margin: 20%;
 }
 
 h1 {

@@ -6,9 +6,39 @@
 </head>
 <%- include("templates/menu") %>
 <main>
-<h3><%= student.name %></h3>
-<h3><%= student.first_surname %></h3>
-<h3><%= student.second_surname %></h3>
+    <article>
+        <img src="" alt="imagen de usuario" id="userImg">
+    </article>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <td><%= student.name %></td>
+        </tr>
+        <tr>
+            <th>Primer Apellido</th>
+            <td><%= student.first_surname %></td>
+        </tr>
+        <tr>
+            <th>Segundo Apellido</th>
+            <td><%= student.second_surname %></td>
+        </tr>
+        <tr>
+            <th>Email Personal</th>
+            <td><%= student.email_personal %></td>
+        </tr>
+        <tr>
+            <th>Número de teléfono</th>
+            <td><%= student.phone_number %></td>
+        </tr>
+        <tr>
+            <th>Código postal</th>
+            <td><%= student.zip_code %></td>
+        </tr>
+        <tr>
+            <th>Activa Points</th>
+            <td><%= student.activa_points_balance %></td>
+        </tr>
+    </table>
 </main>
 
 <%- include("templates/footer") %>
