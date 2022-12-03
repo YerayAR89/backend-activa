@@ -26,7 +26,7 @@ function findAllStudents(callback) {
 }
 exports.findAllStudents = findAllStudents;
 function createUser(user, callback) {
-    const queryString = "INSERT INTO user (email, password, role) VALUES (?, ?, ?)";
+    const queryString = "INSERT INTO user (email, password, role,createdAt ) VALUES (?, ?, ?,NOW())";
     config_js_1.db.query(queryString, [user.email, user.password, user.role], (err, result) => {
         if (err) {
             callback(err, null);

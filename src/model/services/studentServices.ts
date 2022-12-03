@@ -1,58 +1,58 @@
-import {Student} from "../types/student.js";
+import { Student } from "../types/student.js";
 import { User } from "../types/users.js";
-import {db} from "../../config.js";
-import {OkPacket, RowDataPacket} from "mysql2";
+import { db } from "../../config.js";
+import { OkPacket, RowDataPacket } from "mysql2";
 
-function createStudent(student: Student, callback: Function){
-    const queryString = "INSERT INTO student (name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code) VALUES (?, ?, ?, ?, ?, ?, ?)"
-  
-    db.query(
-      queryString,
-      [student.name, student.firstSurname, student.secondSurname, student.personalEmailAddress, student.activaEmailAddress, student.phoneNumber, student.zipCode],
-      (err, result) => {
-        if (err) {callback(err, null)};
-        
-        const insertId = (<OkPacket> result).insertId;
-        callback(null, insertId);
-      }
-    );
-  };
+function createStudent(student: Student, callback: Function) {
+  const queryString = "INSERT INTO student (name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
-  function findAllStudents(callback:Function){
-    const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student";
-    db.query(queryString, (err, result)=>{
-      if(err) callback(err, null);
-  
-      const students = result;
-      callback(null, students);
-    } )
-  }
+  db.query(
+    queryString,
+    [student.name, student.firstSurname, student.secondSurname, student.personalEmailAddress, student.activaEmailAddress, student.phoneNumber, student.zipCode],
+    (err, result) => {
+      if (err) { callback(err, null) };
 
-  function createUser(user: User, callback: Function){
-    const queryString = "INSERT INTO user (email, password, role) VALUES (?, ?, ?)"
-  
-    db.query(
-      queryString,
-      [user.email, user.password, user.role],
-      (err, result) => {
-        if (err) {callback(err, null)};
-        
-        const insertId = (<OkPacket> result).insertId;
-        callback(null, insertId);
-      }
-    );
-  };
-  function findOneStudent(id: string, callback: Function){
- 
-    const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student WHERE id = ?";
-    db.query(queryString, [id], (err, result)=>{
-      if(err){ callback(err, null)};
-      
-      const studentFound: Student = (<RowDataPacket>result)[0];
-      callback(null, studentFound);
-    })
-  };
-  
+      const insertId = (<OkPacket>result).insertId;
+      callback(null, insertId);
+    }
+  );
+};
+
+function findAllStudents(callback: Function) {
+  const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student";
+  db.query(queryString, (err, result) => {
+    if (err) callback(err, null);
+
+    const students = result;
+    callback(null, students);
+  })
+}
+
+function createUser(user: User, callback: Function) {
+  const queryString = "INSERT INTO user (email, password, role,createdAt ) VALUES (?, ?, ?,NOW())"
+
+  db.query(
+    queryString,
+    [user.email, user.password, user.role],
+    (err, result) => {
+      if (err) { callback(err, null) };
+
+      const insertId = (<OkPacket>result).insertId;
+      callback(null, insertId);
+    }
+  );
+};
+function findOneStudent(id: string, callback: Function) {
+
+  const queryString = "SELECT id, name, first_surname, second_surname, email_personal, email_activa, phone_number, zip_code FROM student WHERE id = ?";
+  db.query(queryString, [id], (err, result) => {
+    if (err) { callback(err, null) };
+
+    const studentFound: Student = (<RowDataPacket>result)[0];
+    callback(null, studentFound);
+  })
+};
 
 
-  export {createStudent,findAllStudents,createUser, findOneStudent};
+
+export { createStudent, findAllStudents, createUser, findOneStudent };

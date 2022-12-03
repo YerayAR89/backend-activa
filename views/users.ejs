@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/styleUser.css">
+    <title>UsuariosXT</title>
+</head>
+<body>
+    <h1>Nuevo Usuario</h1>
+    <form action="/users" method="post">
+        <p>
+            <label for="email_field"></label>
+            <input type="text" id="email_field" name="email" placeholder="Email">
+        </p>
+        <p>
+            <label for="password_field"></label>
+            <input type="text" id="password_field" name="password" placeholder="Password">
+        </p>
+        <p>
+            <label for="role_field"></label>
+            <input type="text" id="role_field" name="role" placeholder="Role">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+</body>
+</html>

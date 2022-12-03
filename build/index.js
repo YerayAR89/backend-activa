@@ -29,13 +29,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router_js_1 = require("./routes/router.js");
 const path_1 = __importDefault(require("path"));
+const methodOverride = require('method-override');
 const dotenv = __importStar(require("dotenv"));
 const express_mysql_session_1 = __importDefault(require("express-mysql-session"));
 const session = require('express-session');
-const methodOverride = require('method-override');
 dotenv.config({ path: path_1.default.join(__dirname, "..", ".env") });
 const optionsStore = {
-    connectionLimit: 50,
+    connectionLimit: 10,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PWD,
@@ -76,18 +76,6 @@ app.use(methodOverride((req, res) => {
         return method;
     }
 }));
-/*app.get('/miperfil', (req, res) => {
-    res.render("miperfil")
-})*/
-app.get('/index', (req, res) => {
-    res.render("index");
-});
-app.get('/puntos', (req, res) => {
-    res.render("puntos");
-});
-app.get('/ranking', (req, res) => {
-    res.render("ranking");
-});
 app.use("/", router_js_1.router);
 app.listen(process.env.PORT, () => {
     console.log(`Escuchando en el puerto ${process.env.PORT}`);

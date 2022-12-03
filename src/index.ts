@@ -1,17 +1,15 @@
 import express from 'express';
 import { router } from './routes/router.js';
 import path from 'path';
+const methodOverride = require('method-override');
 import * as dotenv from 'dotenv';
 import MySQLSessionStore from 'express-mysql-session';
-
 const session = require('express-session');
-
-const methodOverride = require('method-override');
 
 dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
 const optionsStore = {
-    connectionLimit: 50,
+    connectionLimit: 10,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PWD,
@@ -30,8 +28,6 @@ const optionsStore = {
 const sqlStore = new (MySQLSessionStore as any)(session);
 
 const sessionStore = new sqlStore(optionsStore);
-
-
 
 const app = express();
 
@@ -61,24 +57,7 @@ app.use(methodOverride((req: express.Request, res: express.Response) => {
     }
 }));
 
-/*app.get('/miperfil', (req, res) => {
-    res.render("miperfil")
-})*/
-
-app.get('/index', (req, res) => {
-    res.render("index")
-})
-
-app.get('/puntos', (req, res) => {
-    res.render("puntos")
-})
-
-app.get('/ranking', (req, res) => {
-    res.render("ranking")
-})
-
 app.use("/", router);
-
 app.listen(process.env.PORT, () => {
     console.log(`Escuchando en el puerto ${process.env.PORT}`);
 })
