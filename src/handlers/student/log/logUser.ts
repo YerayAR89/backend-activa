@@ -17,10 +17,10 @@ async function userValidation(req: express.Request, res: express.Response){
                 console.log(token);
                 res.status(200).json(token);
             } else {
-                res.render("views/index", {errorMessage: "El usuario y la contraseña no coinciden"});
+                res.render("index", {errorMessage: "El usuario y la contraseña no coinciden"});
             } 
         } else {
-            res.render("views/index", {errorMessage: "404. No existe ese usuario"});
+            res.render("index", {errorMessage: "404. No existe ese usuario"});
         }
            
 }

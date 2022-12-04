@@ -25,7 +25,13 @@ router.delete("/students/:id_student", validateToken, userIsAdmin ,deleteStudent
 
 router.post("/users", insertUser);
 
-router.post("/index", userValidation);
+router.post("/logUser", userValidation);
+
+router.get("/index",userValidation);
+
+/*router.get('/index', (req, res) => {
+    res.render("index")
+})*/
 
 router.get("/users/:user_email", getOneUser);
 
