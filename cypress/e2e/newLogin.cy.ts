@@ -1,3 +1,6 @@
+import { contains } from "cypress/types/jquery";
+import { type } from "os";
+
 describe('prueba 1', () => {
   const user = "123@gmail.com";
   const pwd = "1111"
