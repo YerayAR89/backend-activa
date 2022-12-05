@@ -21,13 +21,15 @@ router.get("/students/:id_student", getOneStudent);
 
 router.get("/miperfil", getStudentProfile);
 
-router.delete("/students/:id_student", validateToken, userIsAdmin ,deleteStudent);
+router.delete("/students/:id_student", validateToken, userIsAdmin, deleteStudent);
 
 router.post("/users", insertUser);
 
 router.post("/logUser", userValidation);
 
-router.get("/index",userValidation);
+router.get("/index", (req: express.Request, res: express.Response) => {
+    res.status(200).render("index", { errorMessage: "" });
+});
 
 /*router.get('/index', (req, res) => {
     res.render("index")

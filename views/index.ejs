@@ -25,4 +25,18 @@
             <p>¿No recuerdas la clave? <a href="#">Restablecer aquí</a></p>
         </form>
     </div>
+    <form action="/logUser" method="POST">
+        <p>
+            <label for="user">Email: </label>
+            <input type="text" id="user" name="email">
+        </p>
+        <p>
+            <label for="pwd">Password: </label>
+            <input type="password" id="pwd" name="password">
+        </p>
+        <p><%= errorMessage %></p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
     <%- include("templates/footer") %>
