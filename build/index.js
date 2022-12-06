@@ -76,17 +76,8 @@ app.use(methodOverride((req, res) => {
         return method;
     }
 }));
-/*app.get('/miperfil', (req, res) => {
-    res.render("miperfil")
-})*/
-/*app.get('/index', (req, res) => {
-    res.render("index")
-})*/
 app.get('/puntos', (req, res) => {
     res.render("puntos");
-});
-app.get('/ranking', (req, res) => {
-    res.render("ranking");
 });
 app.use("/", router_js_1.router);
 app.listen(process.env.PORT, () => {

@@ -58,21 +58,11 @@ app.use(methodOverride((req: express.Request, res: express.Response) => {
     }
 }));
 
-/*app.get('/miperfil', (req, res) => {
-    res.render("miperfil")
-})*/
-
-/*app.get('/index', (req, res) => {
-    res.render("index")
-})*/
 
 app.get('/puntos', (req, res) => {
     res.render("puntos")
 })
 
-app.get('/ranking', (req, res) => {
-    res.render("ranking")
-})
 
 app.use("/", router);
 

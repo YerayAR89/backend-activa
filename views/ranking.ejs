@@ -6,28 +6,31 @@
 </head>
 <%- include("templates/menu") %>
 <div class="column">
+
     <div id="rankingColumn">
         <h1>RANKING</h1>
         <hr id="rankingTitle" />
+        
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">1</p>
-            <p class="item2">HOMER S.</p>
+            <p class="item2"><%= ranking[0].name %></p>
             <p class="item3"><em class="red">TOCANDO EL CIELO</em></p>
-            <p class="item4"><span id="pointSize"><b>1250</b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[0].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
+      
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">2</p>
-            <p class="item2">KATY P.</p>
+            <p class="item2"><%= ranking[1].name %></p>
             <p class="item3"><em class="red">EN LA CRESTA DE LA OLA</em></p>
-            <p class="item4"><span id="pointSize"><b>1250</b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[1].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">3</p>
-            <p class="item2">BRITNEY S.</p>
+            <p class="item2"><%= ranking[2].name %></p>
             <p class="item3"><em class="red">SABOREANDO EL PODIO</em></p>
-            <p class="item4"><span id="pointSize"><b>1250</b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[2].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
@@ -45,6 +48,7 @@
         </div>
         <hr id="rankingHr" />
     </div>
+
     <div>
         <div id="rankingCup">
             <div class="center">

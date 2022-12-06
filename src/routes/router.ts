@@ -10,6 +10,8 @@ import { deleteStudent } from '../handlers/student/deleteStudent.js';
 import { validateToken } from '../utils/validateToken.js';
 import { userIsAdmin } from '../utils/userIsAdmin.js';
 import { incomingPoints } from '../handlers/reward/incomingPoints.js';
+import { getRanking } from '../handlers/ranking/getRanking.js';
+import { getRankingList } from '../handlers/ranking/getRankingList.js';
 
 const router = express.Router();
 
@@ -27,13 +29,9 @@ router.post("/users", insertUser);
 
 router.post("/logUser", userValidation);
 
-router.get("/index", (req: express.Request, res: express.Response) => {
+router.get("/", (req: express.Request, res: express.Response) => {
     res.status(200).render("index", { errorMessage: "" });
 });
-
-/*router.get('/index', (req, res) => {
-    res.render("index")
-})*/
 
 router.get("/users/:user_email", getOneUser);
 
@@ -42,6 +40,12 @@ router.get('/users', (req, res) => {
 })
 
 router.get("/misPuntosRecibidos", incomingPoints);
+
+router.get("/scores",getRanking);
+
+router.get("/ranking",getRankingList);
+
+
 
 
 export { router };

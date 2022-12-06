@@ -16,6 +16,8 @@ const deleteStudent_js_1 = require("../handlers/student/deleteStudent.js");
 const validateToken_js_1 = require("../utils/validateToken.js");
 const userIsAdmin_js_1 = require("../utils/userIsAdmin.js");
 const incomingPoints_js_1 = require("../handlers/reward/incomingPoints.js");
+const getRanking_js_1 = require("../handlers/ranking/getRanking.js");
+const getRankingList_js_1 = require("../handlers/ranking/getRankingList.js");
 const router = express_1.default.Router();
 exports.router = router;
 router.post("/students", insertStudent_js_1.insertStudent);
@@ -25,14 +27,13 @@ router.get("/miperfil", getStudentProfile_js_1.getStudentProfile);
 router.delete("/students/:id_student", validateToken_js_1.validateToken, userIsAdmin_js_1.userIsAdmin, deleteStudent_js_1.deleteStudent);
 router.post("/users", insertUser_js_1.insertUser);
 router.post("/logUser", logUser_js_1.userValidation);
-router.get("/index", (req, res) => {
+router.get("/", (req, res) => {
     res.status(200).render("index", { errorMessage: "" });
 });
-/*router.get('/index', (req, res) => {
-    res.render("index")
-})*/
 router.get("/users/:user_email", getOneUser_js_1.getOneUser);
 router.get('/users', (req, res) => {
     res.render("users");
 });
 router.get("/misPuntosRecibidos", incomingPoints_js_1.incomingPoints);
+router.get("/scores", getRanking_js_1.getRanking);
+router.get("/ranking", getRankingList_js_1.getRankingList);
