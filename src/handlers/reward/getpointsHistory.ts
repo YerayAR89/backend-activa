@@ -1,5 +1,4 @@
 import express from 'express';
-import { Ranking } from '../../model/types/ranking.js';
 import { pointsHistory } from '../../model/services/rewardServices.js';
 import { PointHistory } from '../../model/types/points.js'
 

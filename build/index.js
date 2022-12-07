@@ -76,9 +76,6 @@ app.use(methodOverride((req, res) => {
         return method;
     }
 }));
-app.get('/puntos', (req, res) => {
-    res.render("puntos");
-});
 app.use("/", router_js_1.router);
 app.listen(process.env.PORT, () => {
     console.log(`Escuchando en el puerto ${process.env.PORT}`);
