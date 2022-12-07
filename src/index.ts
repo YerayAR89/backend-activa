@@ -58,12 +58,6 @@ app.use(methodOverride((req: express.Request, res: express.Response) => {
     }
 }));
 
-
-app.get('/puntos', (req, res) => {
-    res.render("puntos")
-})
-
-
 app.use("/", router);
 
 app.listen(process.env.PORT, () => {

@@ -18,6 +18,8 @@ const userIsAdmin_js_1 = require("../utils/userIsAdmin.js");
 const incomingPoints_js_1 = require("../handlers/reward/incomingPoints.js");
 const getRanking_js_1 = require("../handlers/ranking/getRanking.js");
 const getRankingList_js_1 = require("../handlers/ranking/getRankingList.js");
+const getpointsHistory_js_1 = require("../handlers/reward/getpointsHistory.js");
+const showPointsHistory_js_1 = require("../handlers/reward/showPointsHistory.js");
 const router = express_1.default.Router();
 exports.router = router;
 router.post("/students", insertStudent_js_1.insertStudent);
@@ -36,4 +38,5 @@ router.get('/users', (req, res) => {
 });
 router.get("/misPuntosRecibidos", incomingPoints_js_1.incomingPoints);
 router.get("/scores", getRanking_js_1.getRanking);
-router.get("/ranking", getRankingList_js_1.getRankingList);
+router.get("/ranking", getRankingList_js_1.getRankingList, showPointsHistory_js_1.showPointsHistory);
+router.get("/pointsHistory", getpointsHistory_js_1.getPointsHistory);

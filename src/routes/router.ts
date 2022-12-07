@@ -12,6 +12,8 @@ import { userIsAdmin } from '../utils/userIsAdmin.js';
 import { incomingPoints } from '../handlers/reward/incomingPoints.js';
 import { getRanking } from '../handlers/ranking/getRanking.js';
 import { getRankingList } from '../handlers/ranking/getRankingList.js';
+import { getPointsHistory } from '../handlers/reward/getpointsHistory.js';
+import { showPointsHistory } from '../handlers/reward/showPointsHistory.js';
 
 const router = express.Router();
 
@@ -33,6 +35,10 @@ router.get("/", (req: express.Request, res: express.Response) => {
     res.status(200).render("index", { errorMessage: "" });
 });
 
+router.get('/puntos', (req, res) => {
+    res.render("puntos")
+})
+
 router.get("/users/:user_email", getOneUser);
 
 router.get('/users', (req, res) => {
@@ -41,11 +47,11 @@ router.get('/users', (req, res) => {
 
 router.get("/misPuntosRecibidos", incomingPoints);
 
-router.get("/scores",getRanking);
+router.get("/scores", getRanking);
 
-router.get("/ranking",getRankingList);
+router.get("/ranking", getRankingList, showPointsHistory);
 
-
+router.get("/pointsHistory", getPointsHistory);
 
 
 export { router };

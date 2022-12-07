@@ -13,38 +13,38 @@
         
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">1</p>
-            <p class="item2"><%= ranking[0].name %></p>
+            <p class="item2"><%= ranking[0].name %> <%= ranking[0].first_surname %></p>
             <p class="item3"><em class="red">TOCANDO EL CIELO</em></p>
             <p class="item4"><span id="pointSize"><b><%= ranking[0].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
-      
+    
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">2</p>
-            <p class="item2"><%= ranking[1].name %></p>
+            <p class="item2"><%= ranking[1].name %> <%= ranking[1].first_surname %></p>
             <p class="item3"><em class="red">EN LA CRESTA DE LA OLA</em></p>
             <p class="item4"><span id="pointSize"><b><%= ranking[1].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">3</p>
-            <p class="item2"><%= ranking[2].name %></p>
+            <p class="item2"><%= ranking[2].name %> <%= ranking[2].first_surname %></p>
             <p class="item3"><em class="red">SABOREANDO EL PODIO</em></p>
             <p class="item4"><span id="pointSize"><b><%= ranking[2].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium2 item1">4</p>
-            <p class="item2">MARIE C. </p>
+            <p class="item2"><%= ranking[3].name %> <%= ranking[3].first_surname %></p>
             <p class="item3"><em class="blue">FUTURO PROMETEDOR</em></p>
-            <p class="item4"><span id="pointSize"><b>1250</b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[3].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium2 item1">5</p>
-            <p class="item2">MARLON B.</p>
+            <p class="item2"><%= ranking[4].name %> <%= ranking[4].first_surname %></p>
             <p class="item3"><em class="blue">EN EL TOP 5</em></p>
-            <p class="item4"><span id="pointSize"><b>1250</b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[4].xp %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
     </div>
@@ -58,58 +58,5 @@
         </div>
     </div>
 </div>
-<div id="socialColumns">
-    <h2 class="center">HISTORIAL SOCIAL</h2>
-    <hr />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>100</b> PuntosActiva </span>Ganó
-            <b>MARLON BRANDON</b></div>
-        <br>
-        Sin ti no hubiera podido conseguirlo tqm bs7s, Un abrazo!.<br>
-        <p>de parte de <b>Elvis no Presley</b>
-    </div>
-    <hr id="rankingHr" />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>50</b> PuntosActiva </span>Ganó
-            <b>PICKLE RICK</b></div>
-        <br>
-        Si dejearas de beber serías un buen abuelo.<br>
-        <p>de parte de <b>Morty</b>
-    </div>
-    <hr id="rankingHr" />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>75</b> PuntosActiva </span>Ganó
-            <b>PEPPE RONI</b></div>
-        <br>
-        Con pizza en todos los trabajos salen "redondos" (K).<br>
-        <p>de parte de <b>Lydia Blanco</b>
-    </div>
-    <hr id="rankingHr" />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>150</b> PuntosActiva </span>Ganó
-            <b>MARIE KONDO</b></div>
-        <br>
-        Al ordenar tu css encontraste la clave del exito en tu corazón. <br>
-        <p>de parte de <b>Marie Curie</b>
-    </div>
-    <hr id="rankingHr" />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>25</b> PuntosActiva </span>Ganó
-            <b>KARLOS ARGUIÑANO</b></div><br> ¿Cómo les llaman los caníbales a los paracaidistas?", "Tocinitos
-        de
-        cielo".
-        <br>
-        <p>de parte de <b>Hannibal Lecter</b>
-    </div>
-    <hr id="rankingHr" />
-    <div class="pAlign">
-        <div id="headerPoints"><span class="pointsRed"><b>175</b> PuntosActiva </span>Ganó
-            <b>CLARA</b></div>
-        <br>
-        Muchas gracias por aCLARArme la duda de bases de datos,
-        Sin niebla todo está más claro.<br>
-        <p>de parte de <b>HEIDI</b>
-    </div>
-    <br><br><br>
-</div>
+<%- include("historialsocial") %>
 <%- include("templates/footer") %>

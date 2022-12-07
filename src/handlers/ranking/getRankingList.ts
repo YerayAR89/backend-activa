@@ -8,4 +8,4 @@ async function getRankingList(req: express.Request, res: express.Response) {
     });
 }
 
-export {getRankingList}
+export { getRankingList }
