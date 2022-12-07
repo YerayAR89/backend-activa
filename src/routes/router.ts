@@ -11,7 +11,7 @@ import { validateToken } from '../utils/validateToken.js';
 import { userIsAdmin } from '../utils/userIsAdmin.js';
 import { incomingPoints } from '../handlers/reward/incomingPoints.js';
 import { getRanking } from '../handlers/ranking/getRanking.js';
-import { getRankingList } from '../handlers/ranking/getRankingList.js';
+import { getRankingList } from '../handlers/ranking/getRanking&PointsList.js';
 import { getPointsHistory } from '../handlers/reward/getpointsHistory.js';
 import { showPointsHistory } from '../handlers/reward/showPointsHistory.js';
 
@@ -49,7 +49,7 @@ router.get("/misPuntosRecibidos", incomingPoints);
 
 router.get("/scores", getRanking);
 
-router.get("/ranking", getRankingList, showPointsHistory);
+router.get("/ranking", getRankingList,);
 
 router.get("/pointsHistory", getPointsHistory);
 
