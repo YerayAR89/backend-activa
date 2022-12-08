@@ -13,38 +13,38 @@
         
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">1</p>
-            <p class="item2"><%= ranking[0].name %> <%= ranking[0].first_surname %></p>
+            <p class="item2"><%= ranking[0].name %> <%= ranking[0].fsurname %></p>
             <p class="item3"><em class="red">TOCANDO EL CIELO</em></p>
-            <p class="item4"><span id="pointSize"><b><%= ranking[0].xp %></b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[0].totalpoints %></b></span> PUNTOS ACTIVA</p>
         </div>
     
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">2</p>
-            <p class="item2"><%= ranking[1].name %> <%= ranking[1].first_surname %></p>
+            <p class="item2"><%= ranking[1].name %> <%= ranking[1].fsurname %></p>
             <p class="item3"><em class="red">EN LA CRESTA DE LA OLA</em></p>
-            <p class="item4"><span id="pointSize"><b><%= ranking[1].xp %></b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[1].totalpoints %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium item1">3</p>
-            <p class="item2"><%= ranking[2].name %> <%= ranking[2].first_surname %></p>
+            <p class="item2"><%= ranking[2].name %> <%= ranking[2].fsurname %></p>
             <p class="item3"><em class="red">SABOREANDO EL PODIO</em></p>
-            <p class="item4"><span id="pointSize"><b><%= ranking[2].xp %></b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[2].totalpoints %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium2 item1">4</p>
-            <p class="item2"><%= ranking[3].name %> <%= ranking[3].first_surname %></p>
+            <p class="item2"><%= ranking[3].name %> <%= ranking[3].fsurname %></p>
             <p class="item3"><em class="blue">FUTURO PROMETEDOR</em></p>
-            <p class="item4"><span id="pointSize"><b><%= ranking[3].xp %></b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[3].totalpoints %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
         <div class="rankingList1">
             <p class="rankingPositionPodium2 item1">5</p>
-            <p class="item2"><%= ranking[4].name %> <%= ranking[4].first_surname %></p>
+            <p class="item2"><%= ranking[4].name %> <%= ranking[4].fsurname %></p>
             <p class="item3"><em class="blue">EN EL TOP 5</em></p>
-            <p class="item4"><span id="pointSize"><b><%= ranking[4].xp %></b></span> PUNTOS ACTIVA</p>
+            <p class="item4"><span id="pointSize"><b><%= ranking[4].totalpoints %></b></span> PUNTOS ACTIVA</p>
         </div>
         <hr id="rankingHr" />
     </div>
@@ -53,7 +53,7 @@
         <div id="rankingCup">
             <div class="center">
                 <img id="cup" src="./media/img/iconosMenu/ranking-blue.svg" alt="una copa"></div>
-            <div id="myPosition">TU PUESTO ACTUAL <b id="myPositionNumber">7</b> <cite id="myTittle"> LLEGANDO A LA CIMA</cite>
+            <div id="myPosition">TU PUESTO ACTUAL<b id="myPositionNumber"><%= position[0].rankk %></b> <cite id="myTittle">PUNTOS: <b><%= position[0].totalpoints %></b></cite>
             </div>
         </div>
     </div>

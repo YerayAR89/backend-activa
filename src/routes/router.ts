@@ -13,7 +13,8 @@ import { incomingPoints } from '../handlers/reward/incomingPoints.js';
 import { getRanking } from '../handlers/ranking/getRanking.js';
 import { getRankingList } from '../handlers/ranking/getRanking&PointsList.js';
 import { getPointsHistory } from '../handlers/reward/getpointsHistory.js';
-import { showPointsHistory } from '../handlers/reward/showPointsHistory.js';
+import { getRankingPosition } from '../handlers/ranking/getRaningPosition.js';
+
 
 const router = express.Router();
 
@@ -49,9 +50,11 @@ router.get("/misPuntosRecibidos", incomingPoints);
 
 router.get("/scores", getRanking);
 
-router.get("/ranking", getRankingList,);
+router.get("/ranking", getRankingList);
 
 router.get("/pointsHistory", getPointsHistory);
+
+router.get("/position", getRankingPosition);
 
 
 export { router };
