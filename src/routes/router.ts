@@ -26,7 +26,7 @@ router.get("/students", getStudents);
 
 router.get("/students/:id_student", getOneStudent);
 
-router.get("/miperfil", getStudentProfile);
+router.get("/miperfil", validateToken, getStudentProfile);
 
 router.delete("/students/:id_student", validateToken, userIsAdmin, deleteStudent);
 
@@ -38,7 +38,7 @@ router.get("/", (req: express.Request, res: express.Response) => {
     res.status(200).render("index", { errorMessage: "" });
 });
 
-router.get('/puntos', (req, res) => {
+router.get('/puntos', validateToken, (req, res) => {
     res.render("puntos")
 })
 
@@ -48,11 +48,11 @@ router.get('/users', (req, res) => {
     res.render("users")
 })
 
-router.get("/misPuntosRecibidos", incomingPoints);
+router.get("/misPuntosRecibidos", validateToken, incomingPoints);
 
 router.get("/scores", getRanking);
 
-router.get("/ranking", getRankingList);
+router.get("/ranking", validateToken, getRankingList);
 
 router.get("/pointsHistory", getPointsHistory);
 

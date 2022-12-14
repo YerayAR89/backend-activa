@@ -5,12 +5,7 @@ Proyecto backend de XarxatecActiva
 ## Instalación
 
 ```bash
-npm install typescript @types/express @types/node --save-dev
-npm install express
-npm install mysql2
-npm install ejs
-npm install method-override
-npm install dotenv
+
 ```
 
 ## Autores

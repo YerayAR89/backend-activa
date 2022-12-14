@@ -10,7 +10,7 @@ import MySQLSessionStore from 'express-mysql-session';
 dotenv.config({ path: path.join(__dirname, "..", ".env") });
 
 const optionsStore = {
-    connectionLimit: 10,
+    connectionLimit: 30,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PWD,
@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 app.use(session({
-    name: "probando_sesiones",
+    name: "xarxatecactiva-points",
     resave: false,
     saveUninitialized: false,
     store: sessionStore,

@@ -35,7 +35,7 @@ const session = require('express-session');
 const express_mysql_session_1 = __importDefault(require("express-mysql-session"));
 dotenv.config({ path: path_1.default.join(__dirname, "..", ".env") });
 const optionsStore = {
-    connectionLimit: 10,
+    connectionLimit: 30,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PWD,
@@ -56,7 +56,7 @@ const app = (0, express_1.default)();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(session({
-    name: "probando_sesiones",
+    name: "xarxatecactiva-points",
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
