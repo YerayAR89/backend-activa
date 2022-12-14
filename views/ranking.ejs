@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include("templates/head", {webTitle: 'Ranking'}) %>
+    <%- include("partials/head", {webTitle: 'Ranking'}) %>
     <link rel="stylesheet" href="./style/styleranking.css">
+
 </head>
-<%- include("templates/menu") %>
+
+<%- include("partials/menu") %>
 <div class="column">
 
     <div id="rankingColumn">
@@ -57,6 +59,9 @@
             </div>
         </div>
     </div>
+    <div class="divContainer">
+
+    </div>
 </div>
 <%- include("historialsocial") %>
-<%- include("templates/footer") %>
+<%- include("partials/footer") %>

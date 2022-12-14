@@ -12,11 +12,9 @@ async function userValidation(req: express.Request, res: express.Response) {
     if (result.data) {
         const user: User = result.data;
         if (await bcrypt.compare(req.body.password, user.password)) {
-            const token = jsonwebtoken.sign({ "email": user.email, "role": user.role }, process.env.SESSION_SECRET!)
+            const token = jsonwebtoken.sign({ "email": user.email, "role": user.role, "id": user.id }, process.env.SESSION_SECRET!)
             req.session.token = token;
-            console.log("login ok");
             res.status(200).json(token);
-            console.log("2");
         } else {
             res.render("index", { errorMessage: "El usuario y la contraseña no coinciden" });
             console.log("no coincide");

@@ -27,7 +27,7 @@ router.get("/students", getStudents_js_1.getStudents);
 router.get("/students/:id_student", getOneStudent_js_1.getOneStudent);
 router.get("/miperfil", getStudentProfile_js_1.getStudentProfile);
 router.delete("/students/:id_student", validateToken_js_1.validateToken, userIsAdmin_js_1.userIsAdmin, deleteStudent_js_1.deleteStudent);
-router.post("/users", insertUser_js_1.insertUser);
+router.post("/users", validateToken_js_1.validateToken, userIsAdmin_js_1.userIsAdmin, insertUser_js_1.insertUser);
 router.post("/logUser", logUser_js_1.userValidation);
 router.get("/", (req, res) => {
     res.status(200).render("index", { errorMessage: "" });

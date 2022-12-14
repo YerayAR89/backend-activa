@@ -1,10 +1,13 @@
 import express from 'express';
 import axios from 'axios';
+import { pruebaId } from '../../utils/prueba';
 
 async function getRankingList(req: express.Request, res: express.Response) {
     const targetRanking = await axios("http://localhost:3000/scores");
     const pointHistory = await axios("http://localhost:3000/pointsHistory");
-    const rankPosition = await axios ("http://localhost:3000/position");
+    const rankPosition = await axios("http://localhost:3000/position");
+
+
     res.render("ranking", {
         ranking: targetRanking.data,
         points: pointHistory.data,

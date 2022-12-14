@@ -10,7 +10,7 @@
     "strict": true, 
     "skipLibCheck": true   
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "src/utils/prueba.ts"],
   "exclude": ["./public", "./cypress", "cypress.config.ts"],
 
 }

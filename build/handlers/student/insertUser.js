@@ -12,7 +12,6 @@ function insertUser(req, res) {
             res.status(200).json({ "userId": userId });
         }
     });
-    console.log(newUser);
 }
 exports.insertUser = insertUser;
 ;

@@ -14,6 +14,8 @@ import { getRanking } from '../handlers/ranking/getRanking.js';
 import { getRankingList } from '../handlers/ranking/getRanking&PointsList.js';
 import { getPointsHistory } from '../handlers/reward/getpointsHistory.js';
 import { getRankingPosition } from '../handlers/ranking/getRaningPosition.js';
+import { pruebaId } from '../utils/prueba.js';
+
 
 
 const router = express.Router();
@@ -28,7 +30,7 @@ router.get("/miperfil", getStudentProfile);
 
 router.delete("/students/:id_student", validateToken, userIsAdmin, deleteStudent);
 
-router.post("/users", insertUser);
+router.post("/users", validateToken, userIsAdmin, insertUser);
 
 router.post("/logUser", userValidation);
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include("templates/head", {webTitle: 'Login'}) %>
+    <%- include("partials/head", {webTitle: 'Login'}) %>
     <link rel="stylesheet" href="./style/styleindex.css">
 </head>
 <body>
@@ -11,32 +11,25 @@
             <img id="imagenLogoXarxatec" src="./media/img/login-img.svg" alt="LogoEnMovimiento"></div>
         <p>En una comunidad Activa
             aprendemos más</p>
-        <form action="logUser" method="POST">
-            <p><img class="iconLogin" src="./media/img/login-icono-usuario.png" alt="usuario"><input type="text"
-                    placeholder="   Usuario"></p>
-            <p><img class="iconLogin" src="./media/img/login-icono-clave.png" alt="clave"><input type="password"
-                    placeholder="   Clave">
+        <form action="/logUser" method="POST">
+            <p><img class="iconLogin" src="./media/img/login-icono-usuario.png" alt="usuario">
+                <label for="user"></label>
+                <input type="text" id="user" name="email" placeholder="Email">
             </p>
+            <p><img class="iconLogin" src="./media/img/login-icono-clave.png" alt="clave">
+                <label for="pwd"></label>
+                <input type="password" id="pwd" name="password" placeholder="Contraseña">
+            </p>
+            <p><%= errorMessage %></p>
+            <p>
+                <input type="submit" id="enter">
+            </p>
+        </form>
 
             <p><%= errorMessage %></p>
 
-            <button id="enter" type="submit"><a id="buttonEntry" href="puntos">ENTRAR</a>
-            </button>
             <p>¿No recuerdas la clave? <a href="#">Restablecer aquí</a></p>
         </form>
     </div>
-    <form action="/logUser" method="POST">
-        <p>
-            <label for="user">Email: </label>
-            <input type="text" id="user" name="email">
-        </p>
-        <p>
-            <label for="pwd">Password: </label>
-            <input type="password" id="pwd" name="password">
-        </p>
-        <p><%= errorMessage %></p>
-        <p>
-            <input type="submit">
-        </p>
-    </form>
-    <%- include("templates/footer") %>
+    
+    <%- include("partials/footer") %>
